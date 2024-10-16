@@ -1,3 +1,10 @@
+environment {
+DOCKER_USERNAME = "sebastainp@yahoo.com"
+DOCKER_PASSWORD = "Sibi72Sep#"
+IMAGE_NAME = "screwfastspapp"
+IMAGE_TAG = "v1"
+}
+
 stage('Build and Push Image') {
       steps {
         script {
