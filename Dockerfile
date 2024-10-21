@@ -1,5 +1,5 @@
-FROM node:20
-
+##FROM node:20
+FROM  anapsix/alpine-java 
 # Create and set working directory
 WORKDIR /app
 
