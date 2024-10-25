@@ -1,10 +1,17 @@
+environment {
+DOCKER_USERNAME = "sebastainp@yahoo.com"
+DOCKER_PASSWORD = "Sibi72Sep#"
+IMAGE_NAME = "screwfastspapp"
+IMAGE_TAG = "v1"
+REGISTRY_CREDENTIAL = 'docker-hub-credentials'
+}
 agent any
   stages {
     stage('Cloning Git') {
       steps {
         git([
-          url: 'https://github.com/webapp-react/screwfast-webapp.git',
-          branch: 'master',
+          url: 'https://github.com/sebastainp/screwfast-spapp.git',
+          branch: 'main',
           credentialsId: 'GitHub'
         ])
       }
