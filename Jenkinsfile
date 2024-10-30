@@ -16,7 +16,7 @@ agent any
         ])
       }
     }
-
+  }
     stage('Build and Push Image') {
       steps {
         script {
