@@ -20,17 +20,17 @@ pipeline {
       }
     }
     
-    stage('Prepare Deployment') {
-      steps {
-        script {
+    //stage('Prepare Deployment') {
+     // steps {
+      //  script {
           // Update the deploy.yaml file or any configuration if required
-          sh '''
-            sed -i 's,IMAGE_NAME_PLACEHOLDER,${IMAGE_NAME},' deploy.yaml
-            sed -i 's,IMAGE_TAG_PLACEHOLDER,${IMAGE_TAG},' deploy.yaml
-          '''
-        }
-      }
-    }
+        //  sh '''
+          //  sed -i 's,IMAGE_NAME_PLACEHOLDER,${IMAGE_NAME},' deploy.yaml
+          // sed -i 's,IMAGE_TAG_PLACEHOLDER,${IMAGE_TAG},' deploy.yaml
+         // '''
+       // }
+     // }
+   // }
  
     stage('Build and Deploy App on EC2') {
       steps {
