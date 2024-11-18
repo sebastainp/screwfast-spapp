@@ -4,7 +4,7 @@ pipeline {
     IMAGE_TAG = "131" // Manually setting the version/tag for testing
     IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
     EC2_IP = "ec2-3-27-235-241.ap-southeast-2.compute.amazonaws.com" // Replace with actual EC2 IP
-    SSH_KEY = credentials('EC2_SSH_KEY') // Using SSH key stored in Jenkins credentials
+    SSH_KEY = credentials('EC2SSH') // Using SSH key stored in Jenkins credentials
   }
   
   agent any
@@ -35,7 +35,7 @@ pipeline {
     stage('Build and Deploy App on EC2') {
       steps {
         script {
-          withCredentials([file(credentialsId: 'EC2_SSH_KEY', variable: 'SSH_KEY_PATH')]) {
+          withCredentials([file(credentialsId: 'EC2SSH', variable: 'SSH_KEY_PATH')]) {
             sh '''
               # Ensure proper permissions on the .pem file
               chmod 400 $SSH_KEY_PATH
