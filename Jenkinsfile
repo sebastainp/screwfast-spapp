@@ -41,7 +41,7 @@ pipeline {
               chmod 400 $SSH_KEY_PATH
  
               # SSH into EC2 instance and deploy Docker container
-              ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH ubuntu@${EC2_IP} <<EOF
+              ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH linux@${EC2_IP} <<EOF
                 # Pull the latest Docker image
                 docker pull ${IMAGE_NAME}:${IMAGE_TAG}
  
