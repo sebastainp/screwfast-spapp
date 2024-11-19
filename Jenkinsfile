@@ -38,7 +38,8 @@ pipeline {
         script {
           withCredentials([file(credentialsId: 'EC2SSH', variable: 'SSH_KEY_PATH')]) {
             sh '''
-             
+              # Ensure proper permissions on the .pem file
+              chmod 400 $SSH_KEY_PATH
  
               # SSH into EC2 instance and deploy Docker container
               ssh -o StrictHostKeyChecking=no -i $SSH_KEY_PATH ec2-user@${EC2_IP} <<EOF
