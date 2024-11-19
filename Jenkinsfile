@@ -3,7 +3,7 @@ pipeline {
     SERVICE_NAME = "screwfast-webapp"
     IMAGE_TAG = "131" // Manually setting the version/tag for testing
     IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
-    EC2_IP = "ec2-3-106-244-42.ap-southeast-2.compute.amazonaws.com" // Replace with actual EC2 IP
+    EC2_IP = "3.106.244.42" // Replace with actual EC2 IP
     SSH_KEY = credentials('SSHPEM') // Using SSH key stored in Jenkins credentials
     // SSH_KEY_PATH = "/home/ec2-user"
   }
