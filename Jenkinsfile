@@ -5,7 +5,7 @@ pipeline {
     IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
     EC2_IP = "ec2-3-106-244-42.ap-southeast-2.compute.amazonaws.com" // Replace with actual EC2 IP
     SSH_KEY = credentials('EC2SSH') // Using SSH key stored in Jenkins credentials
-    SSH_KEY_PATH = "/home/ec2-user/.ssh"
+    SSH_KEY_PATH = "/home/ec2-user"
   }
   
   agent any
