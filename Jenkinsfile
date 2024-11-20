@@ -20,7 +20,7 @@ pipeline {
       steps {
         git([
           url: 'https://github.com/sebastainp/screwfast-spapp.git',
-          branch: 'main',
+          branch: 'dev',
           credentialsId: 'GitHub'
         ])
       }
