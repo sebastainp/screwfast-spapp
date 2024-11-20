@@ -9,6 +9,8 @@ WORKDIR /app
 COPY package*.json ./
 
 ###RUN apt-get update && apt-get install -y nodejs npm
+RUN echo "Node: " && node -v
+RUN echo "NPM: " && npm -v
 
 # Install dependencies
 RUN npm install
