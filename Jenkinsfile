@@ -3,6 +3,7 @@ pipeline {
     SERVICE_NAME = "screwfast-webapp"
    // IMAGE_TAG = "131" // Manually setting the version/tag for testing
    // IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
+    IMAGE_NAME = "spatoshub/spscrewfast" // Docker Hub repository name
     IMAGE_TAG = "${BUILD_NUMBER}"
     REGISTRY_CREDENTIAL = 'dockeracct'
     EC2_IP = "ec2-13-239-27-232.ap-southeast-2.compute.amazonaws.com"
