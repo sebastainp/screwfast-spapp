@@ -1,12 +1,12 @@
 pipeline {
   environment {
     SERVICE_NAME = "screwfast-webapp"
-   // IMAGE_TAG = "131" // Manually setting the version/tag for testing
-   // IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
-    IMAGE_NAME = "spatoshub/spscrewfast" // Docker Hub repository name
-    IMAGE_TAG = "${BUILD_NUMBER}"
+    IMAGE_TAG = "131" // Manually setting the version/tag for testing
+    IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
+   // IMAGE_NAME = "spatoshub/spscrewfast" // Docker Hub repository name
+   // IMAGE_TAG = "${BUILD_NUMBER}"
     REGISTRY_CREDENTIAL = 'dockeracct'
-    EC2_IP = "ec2-13-239-27-232.ap-southeast-2.compute.amazonaws.com"
+    EC2_IP = "ec2-3-106-215-60.ap-southeast-2.compute.amazonaws.com"
     SSH_KEY = credentials('devubt') // Using SSH key stored in Jenkins credentials
    // EC2_IP = "3.106.244.42" // Replace with actual EC2 IP
    // SSH_KEY = credentials('EC2SSH') // Using SSH key stored in Jenkins credentials
@@ -26,17 +26,17 @@ pipeline {
       }
     }
 
-    stage('Build and Push Image') {
-      steps {
-        script {
-          withCredentials([usernamePassword(credentialsId: REGISTRY_CREDENTIAL, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-            sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
-            sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
-            sh 'docker push ${IMAGE_NAME}:${IMAGE_TAG}'
-          }
-        }
-      }
-    }
+//    stage('Build and Push Image') {
+//      steps {
+ //       script {
+  //        withCredentials([usernamePassword(credentialsId: REGISTRY_CREDENTIAL, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+  //          sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+  //          sh 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
+  //          sh 'docker push ${IMAGE_NAME}:${IMAGE_TAG}'
+  //        }
+  //      }
+  //    }
+  //  }
     
     //stage('Prepare Deployment') {
      // steps {
