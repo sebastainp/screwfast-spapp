@@ -1,4 +1,4 @@
-##FROM node:20
+FROM node:20
 FROM  docker.io/anapsix/alpine-java 
 
     
@@ -9,8 +9,8 @@ WORKDIR /app
 COPY package*.json ./
 
 ###RUN apt-get update && apt-get install -y nodejs npm
-##RUN echo "Node: " && node -v
-##RUN echo "NPM: " && npm -v
+RUN echo "Node: " && node -v
+RUN echo "NPM: " && npm -v
 
 # Install dependencies
 RUN npm install
