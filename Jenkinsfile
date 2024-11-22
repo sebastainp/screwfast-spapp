@@ -2,8 +2,8 @@ pipeline {
   environment {
     PATH = "/usr/bin:/usr/local/bin:${env.PATH}"
     SERVICE_NAME = "screwfast-webapp"
-    IMAGE_TAG = "131" // Manually setting the version/tag for testing
-    IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
+    //IMAGE_TAG = "131" // Manually setting the version/tag for testing
+    //IMAGE_NAME = "vishal8266/screwfast-webapp" // Docker Hub repository name
     IMAGE_NAME = "spatoshub/spscrewfast" // Docker Hub repository name
     IMAGE_TAG = "${BUILD_NUMBER}"
     REGISTRY_CREDENTIAL = 'dockeracct'
