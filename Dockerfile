@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:alpine
 FROM  docker.io/anapsix/alpine-java 
 
     
