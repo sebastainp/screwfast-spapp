@@ -1,7 +1,7 @@
-FROM node:alpine
-FROM  docker.io/anapsix/alpine-java 
+FROM node:20
+#FROM  docker.io/anapsix/alpine-java 
 # Update package list
-RUN apk update && apk add --no-cache nodejs
+#RUN apk update && apk add --no-cache nodejs
     
 # Create and set working directory
 WORKDIR /app
